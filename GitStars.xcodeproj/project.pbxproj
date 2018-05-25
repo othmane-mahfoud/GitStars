@@ -12,6 +12,7 @@
 		185ADB5B20B831470025ACEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5920B831470025ACEA /* Main.storyboard */; };
 		185ADB5D20B831490025ACEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5C20B831490025ACEA /* Assets.xcassets */; };
 		185ADB6020B831490025ACEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5E20B831490025ACEA /* LaunchScreen.storyboard */; };
+		C63D8CECAB1C51C5B95A0BA6 /* Pods_GitStars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16A941C4B04EB86E28763A7 /* Pods_GitStars.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		185ADB5C20B831490025ACEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185ADB5F20B831490025ACEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185ADB6120B831490025ACEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B05E0E623DA1435DE8852A7 /* Pods-GitStars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitStars.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitStars/Pods-GitStars.release.xcconfig"; sourceTree = "<group>"; };
+		AFAF3CC31FAE2B943EBCA2F2 /* Pods-GitStars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitStars.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitStars/Pods-GitStars.debug.xcconfig"; sourceTree = "<group>"; };
+		C16A941C4B04EB86E28763A7 /* Pods_GitStars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitStars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63D8CECAB1C51C5B95A0BA6 /* Pods_GitStars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				185ADB5420B831470025ACEA /* GitStars */,
 				185ADB5320B831470025ACEA /* Products */,
+				AAC4A51D8D17463EFE7BD45E /* Pods */,
+				D883CCFA82EE9421FDC32697 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +61,63 @@
 		185ADB5420B831470025ACEA /* GitStars */ = {
 			isa = PBXGroup;
 			children = (
-				185ADB5520B831470025ACEA /* AppDelegate.swift */,
-				185ADB5720B831470025ACEA /* ViewController.swift */,
-				185ADB5920B831470025ACEA /* Main.storyboard */,
+				185ADB6A20B831D70025ACEA /* Model */,
+				185ADB6920B831D10025ACEA /* View */,
+				185ADB6820B831BB0025ACEA /* Controller */,
+				185ADB6720B831A90025ACEA /* Supporting Files */,
 				185ADB5C20B831490025ACEA /* Assets.xcassets */,
-				185ADB5E20B831490025ACEA /* LaunchScreen.storyboard */,
-				185ADB6120B831490025ACEA /* Info.plist */,
 			);
 			path = GitStars;
+			sourceTree = "<group>";
+		};
+		185ADB6720B831A90025ACEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				185ADB6120B831490025ACEA /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		185ADB6820B831BB0025ACEA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				185ADB5520B831470025ACEA /* AppDelegate.swift */,
+				185ADB5720B831470025ACEA /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		185ADB6920B831D10025ACEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				185ADB5920B831470025ACEA /* Main.storyboard */,
+				185ADB5E20B831490025ACEA /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		185ADB6A20B831D70025ACEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAC4A51D8D17463EFE7BD45E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF3CC31FAE2B943EBCA2F2 /* Pods-GitStars.debug.xcconfig */,
+				6B05E0E623DA1435DE8852A7 /* Pods-GitStars.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D883CCFA82EE9421FDC32697 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C16A941C4B04EB86E28763A7 /* Pods_GitStars.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 185ADB6420B831490025ACEA /* Build configuration list for PBXNativeTarget "GitStars" */;
 			buildPhases = (
+				6660531F828D5B1729664279 /* [CP] Check Pods Manifest.lock */,
 				185ADB4E20B831470025ACEA /* Sources */,
 				185ADB4F20B831470025ACEA /* Frameworks */,
 				185ADB5020B831470025ACEA /* Resources */,
+				C530BD0F68208E3FFC3FA867 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +187,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6660531F828D5B1729664279 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitStars-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C530BD0F68208E3FFC3FA867 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GitStars/Pods-GitStars-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitStars/Pods-GitStars-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		185ADB4E20B831470025ACEA /* Sources */ = {
@@ -278,10 +379,11 @@
 		};
 		185ADB6520B831490025ACEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFAF3CC31FAE2B943EBCA2F2 /* Pods-GitStars.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GitStars/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitStars/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,10 +397,11 @@
 		};
 		185ADB6620B831490025ACEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B05E0E623DA1435DE8852A7 /* Pods-GitStars.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GitStars/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitStars/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
