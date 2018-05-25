@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1836D44420B844D9002F262A /* RepoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836D44220B844D9002F262A /* RepoCustomCell.swift */; };
+		1836D44520B844D9002F262A /* RepoCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1836D44320B844D9002F262A /* RepoCustomCell.xib */; };
 		185ADB5620B831470025ACEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185ADB5520B831470025ACEA /* AppDelegate.swift */; };
-		185ADB5820B831470025ACEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185ADB5720B831470025ACEA /* ViewController.swift */; };
+		185ADB5820B831470025ACEA /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185ADB5720B831470025ACEA /* RepoListViewController.swift */; };
 		185ADB5B20B831470025ACEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5920B831470025ACEA /* Main.storyboard */; };
 		185ADB5D20B831490025ACEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5C20B831490025ACEA /* Assets.xcassets */; };
 		185ADB6020B831490025ACEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5E20B831490025ACEA /* LaunchScreen.storyboard */; };
@@ -16,9 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1836D44220B844D9002F262A /* RepoCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCustomCell.swift; sourceTree = "<group>"; };
+		1836D44320B844D9002F262A /* RepoCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCustomCell.xib; sourceTree = "<group>"; };
 		185ADB5220B831470025ACEA /* GitStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185ADB5520B831470025ACEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		185ADB5720B831470025ACEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		185ADB5720B831470025ACEA /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
 		185ADB5A20B831470025ACEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		185ADB5C20B831490025ACEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185ADB5F20B831490025ACEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1836D44120B844B8002F262A /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1836D44220B844D9002F262A /* RepoCustomCell.swift */,
+				1836D44320B844D9002F262A /* RepoCustomCell.xib */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		185ADB4920B831470025ACEA = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				185ADB5520B831470025ACEA /* AppDelegate.swift */,
-				185ADB5720B831470025ACEA /* ViewController.swift */,
+				185ADB5720B831470025ACEA /* RepoListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -90,6 +103,7 @@
 		185ADB6920B831D10025ACEA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1836D44120B844B8002F262A /* Custom Cell */,
 				185ADB5920B831470025ACEA /* Main.storyboard */,
 				185ADB5E20B831490025ACEA /* LaunchScreen.storyboard */,
 			);
@@ -180,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1836D44520B844D9002F262A /* RepoCustomCell.xib in Resources */,
 				185ADB6020B831490025ACEA /* LaunchScreen.storyboard in Resources */,
 				185ADB5D20B831490025ACEA /* Assets.xcassets in Resources */,
 				185ADB5B20B831470025ACEA /* Main.storyboard in Resources */,
@@ -236,7 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185ADB5820B831470025ACEA /* ViewController.swift in Sources */,
+				185ADB5820B831470025ACEA /* RepoListViewController.swift in Sources */,
+				1836D44420B844D9002F262A /* RepoCustomCell.swift in Sources */,
 				185ADB5620B831470025ACEA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
