@@ -15,7 +15,6 @@ class Repo {
     var repoOwner : String
     var repoOwnerAvatar : String
     var repoStars : Float
-    
     init(name : String, description : String, owner : String, ownerAvatar : String, stars : Float) {
         repoName = name
         repoDescription = description

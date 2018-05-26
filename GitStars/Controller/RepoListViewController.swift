@@ -14,27 +14,21 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
     
     //Constants
     let requestURL : String = "https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc"
-    let indexOfLastRepo : Int = 29
     
-    //Variables
     var allRepos : [Repo] = [Repo]()
 
     @IBOutlet weak var repoListTableView: UITableView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        //Set self as delegate and data source
         repoListTableView.delegate = self
         repoListTableView.dataSource = self
-        
-        //Register the custom repo cell
         repoListTableView.register(UINib(nibName: "RepoCustomCell", bundle: nil), forCellReuseIdentifier: "repoCustomCell")
         
-        //Adjust table's cells automatically
         configureTableView()
         
-        //Get data from api
         getRepoData(url: requestURL)
         
     }
@@ -53,15 +47,8 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.repoNameLabel.text = allRepos[indexPath.row].repoName
         cell.repoDescriptionLabel.text = allRepos[indexPath.row].repoDescription
         cell.repoOwnerNameLabel.text = allRepos[indexPath.row].repoOwner
-        if allRepos[indexPath.row].repoStars >= 1000 {
-            
-            let formatedStars = allRepos[indexPath.row].repoStars / 1000
-            cell.repoStarsLabel.text = "\(String(NSString(format: "%.01f", formatedStars)))k"
-            
-        }
-        else{
-            cell.repoStarsLabel.text = String(allRepos[indexPath.row].repoStars)
-        }
+        cell.repoStarsLabel.text = formatStarsNumber(starNumber: allRepos[indexPath.row].repoStars)
+        cell.repoOwnerAvatarImageView.image = convertUrlToImage(imageUrl: allRepos[indexPath.row].repoOwnerAvatar)
         
         return cell
         
@@ -103,7 +90,7 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func updateRepoData(json : JSON) {
         
-        for index in 0...indexOfLastRepo {
+        for index in 0...json["items"].count {
             if let repoName = json["items"][index]["name"].string {
                 let repoDescription = json["items"][index]["description"].string
                 let repoOwner = json["items"][index]["owner"]["login"].string
@@ -122,7 +109,29 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
+    
+    //MARK: - Helper Functions
+    
+    func formatStarsNumber(starNumber : Float) -> String {
+        
+        if starNumber >= 1000 {
+            let formatedStars = starNumber / 1000
+            return "\(String(NSString(format: "%.01f", formatedStars)))k"
+        }
+        else{
+            return String(starNumber)
+        }
+        
+    }
+    
+    func convertUrlToImage(imageUrl : String) -> UIImage {
+        
+        let url = URL(string : imageUrl)
+        let data = try? Data(contentsOf: url!)
+        let image : UIImage = UIImage(data: data!)!
+        return image
 
+    }
 
 }
 
