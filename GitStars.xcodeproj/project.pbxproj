@@ -14,6 +14,7 @@
 		185ADB5B20B831470025ACEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5920B831470025ACEA /* Main.storyboard */; };
 		185ADB5D20B831490025ACEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5C20B831490025ACEA /* Assets.xcassets */; };
 		185ADB6020B831490025ACEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185ADB5E20B831490025ACEA /* LaunchScreen.storyboard */; };
+		18C5500920B9883D00D1D648 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5500820B9883D00D1D648 /* Repo.swift */; };
 		C63D8CECAB1C51C5B95A0BA6 /* Pods_GitStars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16A941C4B04EB86E28763A7 /* Pods_GitStars.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		185ADB5C20B831490025ACEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185ADB5F20B831490025ACEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185ADB6120B831490025ACEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C5500820B9883D00D1D648 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		6B05E0E623DA1435DE8852A7 /* Pods-GitStars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitStars.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitStars/Pods-GitStars.release.xcconfig"; sourceTree = "<group>"; };
 		AFAF3CC31FAE2B943EBCA2F2 /* Pods-GitStars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitStars.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitStars/Pods-GitStars.debug.xcconfig"; sourceTree = "<group>"; };
 		C16A941C4B04EB86E28763A7 /* Pods_GitStars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitStars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 		185ADB6A20B831D70025ACEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18C5500820B9883D00D1D648 /* Repo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				185ADB5820B831470025ACEA /* RepoListViewController.swift in Sources */,
 				1836D44420B844D9002F262A /* RepoCustomCell.swift in Sources */,
 				185ADB5620B831470025ACEA /* AppDelegate.swift in Sources */,
+				18C5500920B9883D00D1D648 /* Repo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
