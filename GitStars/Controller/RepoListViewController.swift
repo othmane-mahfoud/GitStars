@@ -9,11 +9,9 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class RepoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    //Constants
-    let requestURL : String = "https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc"
     
     var allRepos : [Repo] = [Repo]()
 
@@ -26,10 +24,10 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         repoListTableView.delegate = self
         repoListTableView.dataSource = self
         repoListTableView.register(UINib(nibName: "RepoCustomCell", bundle: nil), forCellReuseIdentifier: "repoCustomCell")
-        
+
         configureTableView()
         
-        getRepoData(url: requestURL)
+        getRepoData()
         
     }
 
@@ -71,13 +69,20 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - Networking
     
-    func getRepoData(url: String) {
+    func getRepoData() {
         
-        Alamofire.request(url, method: .get).responseJSON { response in
+        let date : String = getCurrentDate()
+        let requestURL : String = "https://api.github.com/search/repositories?q=created:%3\(date)&sort=stars&order=desc"
+        
+        SVProgressHUD.show()
+        
+        Alamofire.request(requestURL, method: .get).responseJSON { response in
             if response.result.isSuccess {
                 print("Sucess! Got the github data")
                 let repoJSON : JSON = JSON(response.result.value!)
                 self.updateRepoData(json: repoJSON)
+                
+                SVProgressHUD.dismiss()
             }
             else {
                 print("Error: \(String(describing: response.result.error))")
@@ -92,14 +97,13 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         
         for index in 0...json["items"].count {
             if let repoName = json["items"][index]["name"].string {
-                let repoDescription = json["items"][index]["description"].string
+                let repoDescription = json["items"][index]["description"].string ?? "No Description Provided"
                 let repoOwner = json["items"][index]["owner"]["login"].string
                 let repoOwnerAvatar = json["items"][index]["owner"]["avatar_url"].string
                 let repoStars = json["items"][index]["stargazers_count"].float
-                let newRepo = Repo(name: repoName, description: repoDescription!, owner: repoOwner!, ownerAvatar: repoOwnerAvatar!, stars: repoStars!)
-                
+                let newRepo = Repo(name: repoName, description: repoDescription, owner: repoOwner!, ownerAvatar: repoOwnerAvatar!, stars: repoStars!)
                 self.allRepos.append(newRepo)
-                
+
                 self.configureTableView()
                 self.repoListTableView.reloadData()
             }
@@ -115,11 +119,12 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
     func formatStarsNumber(starNumber : Float) -> String {
         
         if starNumber >= 1000 {
-            let formatedStars = starNumber / 1000
-            return "\(String(NSString(format: "%.01f", formatedStars)))k"
+            let formattedStars = starNumber / 1000
+            return "\(String(NSString(format: "%.01f", formattedStars)))k"
         }
         else{
-            return String(starNumber)
+            let formattedStars = Int(starNumber)
+            return String(formattedStars)
         }
         
     }
@@ -132,6 +137,17 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         return image
 
     }
+    
+    func getCurrentDate() -> String {
+       
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let formattedDate = formatter.string(from: date)
+        return formattedDate
+        
+    }
+    
 
 }
 
