@@ -16,6 +16,12 @@ To get the most starred Github repos created in the last 30 days (relative to 20
 `https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc` </br>
 You can read more about the Github API over [here](https://developer.github.com/v3/search/#search-repositories).
 
+## Example
+
+This is an example run of the app from 28/05/2018: </br>
+
+<img src="https://github.com/othmane-mahfoud/GitStars/blob/master/Example.png" height="640" width="375">
+
 ## Thoughts?
 
 If you have any questions or feedback about my app, feel free to contact me: **mahfoud.othmane97@gmail.com** :e-mail:
